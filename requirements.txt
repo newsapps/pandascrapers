@@ -1,0 +1,9 @@
+Fabric==1.4.0
+certifi==0.0.8
+chardet==1.0.1
+lxml==2.3.3
+pycrypto==2.5
+readline==6.2.2
+requests==0.10.6
+ssh==1.7.13
+wsgiref==0.1.2

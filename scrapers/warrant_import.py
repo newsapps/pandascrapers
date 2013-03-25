@@ -23,7 +23,6 @@ import sqlite3
 import locale
 import os
 
-locale.setlocale(locale.LC_NUMERIC, 'en_US')
 BASE_SEARCH_URL = 'http://www4.cookcountysheriff.org/locatename.asp'
 PANDA_API = 'http://panda.tribapps.com/api/1.0/'
 PANDA_SLUG = 'cook_county_warrants'

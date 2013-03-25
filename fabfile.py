@@ -122,19 +122,15 @@ Commands - deployment
 def deploy():
     """
     Deploy the latest version of the site to the server and restart Apache2.
-    
+
     Does not perform the functions of load_new_data().
     """
     _confirm_branch()
-    
+
     require('settings', provided_by=[production, staging])
     require('branch', provided_by=[stable, master, branch])
-    
-    with settings(warn_only=True):
-        maintenance_up()
-        
+
     checkout_latest()
-    maintenance_down()
     
 def maintenance_up():
     """

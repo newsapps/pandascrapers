@@ -16,7 +16,7 @@ env.env_path = '%(path)s/env' % env
 env.repo_path = '%(path)s/repository' % env
 env.apache_config_path = '/home/newsapps/sites/apache/%(project_name)s' % env
 env.python = 'python2.6'
-env.repository_url = 'git@github.com:newsapps/pandascrapers.git' % env
+env.repository_url = 'git://github.com/newsapps/pandascrapers.git' % env
 
 """
 Environments
@@ -26,7 +26,7 @@ def production():
     Work on production environment
     """
     env.settings = 'production'
-    env.hosts = ['bfcron.tribapps.com']
+    env.hosts = ['db.tribapps.com']
     env.user = 'newsapps'
 
 def staging():
@@ -77,7 +77,6 @@ def setup():
     clone_repo()
     checkout_latest()
     install_requirements()
-    install_apache_conf()
 
 def setup_directories():
     """
@@ -116,13 +115,6 @@ def install_requirements():
     Install the required packages using pip.
     """
     run('source %(env_path)s/bin/activate; pip install -U -E %(env_path)s -r %(repo_path)s/requirements.txt' % env)
-
-def install_apache_conf():
-    """
-    Install the apache site config file.
-    """
-    sudo('cp -T %(repo_path)s/schools/configs/%(settings)s/apache %(apache_config_path)s' % env)
-
 
 """
 Commands - deployment

@@ -3,7 +3,7 @@ PROJECT=${HOME}/sites/pandascrapers
 RELEASE=${PROJECT}/repository
 
 if [ -d "$WORKON_HOME" ]; then
-    VIRTUAL_ENV=$WORKON_HOME/crime
+    VIRTUAL_ENV=$WORKON_HOME/pandascrapers
 else
     VIRTUAL_ENV=${HOME}/env
 fi

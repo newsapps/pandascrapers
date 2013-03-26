@@ -1,5 +1,5 @@
 #!/bin/bash
-PROJECT=${HOME}/sites/pandascraper
+PROJECT=${HOME}/sites/pandascrapers
 RELEASE=${PROJECT}/repository
 
 if [ -d "$WORKON_HOME" ]; then
